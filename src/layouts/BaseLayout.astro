@@ -1,0 +1,27 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Open Persian MIR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col">
+    <Navbar />
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex-1 py-8">
+      <slot />
+    </main>
+    <footer class="border-t border-slate-800 py-6 text-center text-sm text-slate-400">
+      Open Persian MIR — Computational Musicology & Research Hub
+    </footer>
+  </body>
+</html>

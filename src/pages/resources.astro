@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const datasets = await getCollection('datasets');
+const papers = await getCollection('papers');
+---
+<BaseLayout title="Resources & Literature">
+  <h1 class="text-3xl font-bold text-white mb-6">Datasets & Literature</h1>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold text-teal-300 mb-3">Datasets</h2>
+    <div class="grid gap-4 md:grid-cols-2">
+      {datasets.map((d) => (
+        <div class="rounded-lg border border-slate-800 bg-slate-900/70 p-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-white">{d.data.name}</h3>
+            <span class="text-xs font-mono text-amber-300">{d.data.year}</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">{d.data.authors} · {d.data.modality}</p>
+          <p class="text-sm text-slate-300 mt-2">{d.data.focus}</p>
+          <a href={d.data.url} target="_blank" rel="noreferrer" class="inline-block mt-3 text-xs text-teal-400 hover:underline">
+            View Source →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-teal-300 mb-3">Past Research & Papers</h2>
+    <div class="space-y-4">
+      {papers.map((p) => (
+        <div class="rounded-lg border border-slate-800 bg-slate-900/70 p-4">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-semibold text-white">{p.data.title}</h3>
+            <span class="text-xs font-mono text-amber-300">{p.data.venue} ({p.data.year})</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">{p.data.authors} · {p.data.category}</p>
+          <p class="text-sm text-slate-300 mt-2">{p.data.summary}</p>
+          <a href={p.data.url} target="_blank" rel="noreferrer" class="inline-block mt-3 text-xs text-teal-400 hover:underline">
+            Read Paper →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

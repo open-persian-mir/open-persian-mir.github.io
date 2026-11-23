@@ -1,0 +1,7 @@
+name: IRMA Dataset
+authors: Sepideh Shafiei et al.
+year: 2020
+modality: Audio + MIDI + CSV
+focus: Radif segmentation, pitch/energy contours, Tahrir annotation
+license: Open Source
+url: https://github.com/SepiSha/irma-dataset
