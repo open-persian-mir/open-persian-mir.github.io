@@ -1,0 +1,13 @@
+- name: IRMA Dataset
+  authors: Sepideh Shafiei et al.
+  year: 2020
+  modality: Audio + MIDI + CSV
+  focus: Radif segmentation, pitch/energy contours, Tahrir annotation
+  url: https://github.com/SepiSha/irma-dataset
+
+- name: ShourCorpus
+  authors: Maziar Kanani et al.
+  year: 2022
+  modality: Symbolic (MIDI + Pitch-bend)
+  focus: Non-metric Radif performance modeling for Dastgah-e Shur
+  url: https://github.com/maziarkanani/ShourCorpus

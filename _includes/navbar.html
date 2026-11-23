@@ -1,0 +1,14 @@
+<header class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="{{ '/history/lineage/' | relative_url }}" {% if page.collection == 'history' %}class="active"{% endif %}>History</a>
+      <a href="{{ '/theory/tuning-microtonality/' | relative_url }}" {% if page.collection == 'theory' %}class="active"{% endif %}>Theory</a>
+      <a href="{{ '/instruments/overview/' | relative_url }}" {% if page.collection == 'instruments' %}class="active"{% endif %}>Instruments</a>
+      <a href="{{ '/styles/overview/' | relative_url }}" {% if page.collection == 'styles' %}class="active"{% endif %}>Styles</a>
+      <a href="{{ '/aesthetics/poetry-prosody/' | relative_url }}" {% if page.collection == 'aesthetics' %}class="active"{% endif %}>Aesthetics</a>
+      <a href="{{ '/mir/overview/' | relative_url }}" {% if page.collection == 'mir' %}class="active"{% endif %}>MIR</a>
+      <a href="{{ '/resources.html' | relative_url }}" {% if page.url contains 'resources' %}class="active"{% endif %}>Resources</a>
+    </nav>
+  </div>
+</header>

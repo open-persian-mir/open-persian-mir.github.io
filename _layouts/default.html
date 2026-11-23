@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  {% include navbar.html %}
+  <div class="page-shell {% unless page.collection %}no-sidebar{% endunless %}">
+    {% include sidebar.html %}
+    <main class="main-content">
+      {{ content }}
+    </main>
+  </div>
+  <footer class="site-footer">
+    {{ site.title }} — Open Computational Persian Music Hub
+  </footer>
+</body>
+</html>

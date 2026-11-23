@@ -1,0 +1,33 @@
+{% if page.collection %}
+  {% assign current_items = site[page.collection] | sort: "order" %}
+  <aside class="sidebar" aria-label="Section Navigation">
+    <details id="sidebar-details" open>
+      <summary class="sidebar-toggle">In This Section</summary>
+      <div class="sidebar-body">
+        <h2>{{ page.collection | capitalize }}</h2>
+        <ul>
+          {% for item in current_items %}
+            <li>
+              <a href="{{ item.url | relative_url }}" {% if item.url == page.url %}class="current"{% endif %}>
+                {{ item.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </details>
+  </aside>
+
+  <script>
+    (function () {
+      const details = document.getElementById("sidebar-details");
+      if (!details) return;
+      const mq = window.matchMedia("(max-width: 860px)");
+      function syncSidebar() {
+        details.open = !mq.matches;
+      }
+      syncSidebar();
+      mq.addEventListener("change", syncSidebar);
+    })();
+  </script>
+{% endif %}

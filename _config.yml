@@ -1,0 +1,68 @@
+title: "Open Persian MIR"
+description: "A comprehensive hub for Computational Persian Music, Theory, Organology, Styles, Aesthetics, and Research."
+url: "https://open-persian-mir.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
+collections:
+  history:
+    output: true
+    permalink: /history/:name/
+  theory:
+    output: true
+    permalink: /theory/:name/
+  instruments:
+    output: true
+    permalink: /instruments/:name/
+  styles:
+    output: true
+    permalink: /styles/:name/
+  aesthetics:
+    output: true
+    permalink: /aesthetics/:name/
+  mir:
+    output: true
+    permalink: /mir/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "history"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+      type: "theory"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+      type: "instruments"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+      type: "styles"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+      type: "aesthetics"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+      type: "mir"
+    values:
+      layout: "article"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - setup-jekyll.sh
+  - vendor
+  - .jekyll-cache
+  - _site

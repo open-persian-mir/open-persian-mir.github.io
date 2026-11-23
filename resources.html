@@ -1,0 +1,36 @@
+---
+layout: default
+title: Datasets & Literature
+---
+<h1>Datasets &amp; Literature</h1>
+<p class="summary">Curated corpora and past research publications stored in <code>_data/</code>.</p>
+
+<h2>Datasets</h2>
+<div class="card-grid">
+  {% for d in site.data.datasets %}
+    <div class="card">
+      <div class="card-top">
+        <h3>{{ d.name }}</h3>
+        <span class="badge">{{ d.year }}</span>
+      </div>
+      <p class="card-meta">{{ d.authors }} · {{ d.modality }}</p>
+      <p>{{ d.focus }}</p>
+      <a href="{{ d.url }}" target="_blank" rel="noreferrer">View Dataset →</a>
+    </div>
+  {% endfor %}
+</div>
+
+<h2>Past Research &amp; Papers</h2>
+<div class="card-grid">
+  {% for p in site.data.papers %}
+    <div class="card">
+      <div class="card-top">
+        <h3>{{ p.title }}</h3>
+        <span class="badge">{{ p.venue }} ({{ p.year }})</span>
+      </div>
+      <p class="card-meta">{{ p.authors }} · {{ p.category }}</p>
+      <p>{{ p.summary }}</p>
+      <a href="{{ p.url }}" target="_blank" rel="noreferrer">Read Paper →</a>
+    </div>
+  {% endfor %}
+</div>

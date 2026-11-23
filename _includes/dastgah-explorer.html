@@ -1,0 +1,87 @@
+<section class="explorer-box" aria-label="Dastgah-e Shur Pitch Explorer">
+  <div class="explorer-header">
+    <div>
+      <h2>Dastgāh-e Shur — Interactive Pitch Lab</h2>
+      <p class="summary" style="margin: 0.2rem 0 0; font-size: 0.85rem;">
+        Click any scale degree to hear microtonal intervals via the browser Web Audio API.
+      </p>
+    </div>
+    <span class="badge">Neutral 2nd ≈ +140¢</span>
+  </div>
+
+  <div class="note-grid" id="shur-notes">
+    <button type="button" class="note-btn" data-cents="0">
+      <div class="note-pitch">D4</div>
+      <div class="note-name">Āghāz</div>
+      <div class="note-cents">+0¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="140">
+      <div class="note-pitch">E♭𝄳4</div>
+      <div class="note-name">Mi Koron</div>
+      <div class="note-cents">+140¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="300">
+      <div class="note-pitch">F4</div>
+      <div class="note-name">Fa</div>
+      <div class="note-cents">+300¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="500">
+      <div class="note-pitch">G4</div>
+      <div class="note-name">Sol (Shāhed)</div>
+      <div class="note-cents">+500¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="600">
+      <div class="note-pitch">A♭4</div>
+      <div class="note-name">La Bemol</div>
+      <div class="note-cents">+600¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="800">
+      <div class="note-pitch">B♭4</div>
+      <div class="note-name">Si Bemol</div>
+      <div class="note-cents">+800¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="1000">
+      <div class="note-pitch">C5</div>
+      <div class="note-name">Do</div>
+      <div class="note-cents">+1000¢</div>
+    </button>
+    <button type="button" class="note-btn" data-cents="1200">
+      <div class="note-pitch">D5</div>
+      <div class="note-name">Re (Octave)</div>
+      <div class="note-cents">+1200¢</div>
+    </button>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const container = document.getElementById("shur-notes");
+    if (!container) return;
+    const buttons = container.querySelectorAll(".note-btn");
+    const baseFreq = 293.66; // D4
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const cents = Number(btn.getAttribute("data-cents") || "0");
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = "triangle";
+        osc.frequency.value = baseFreq * Math.pow(2, cents / 1200);
+
+        gain.gain.setValueAtTime(0.22, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.0);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 1.0);
+      });
+    });
+  })();
+</script>

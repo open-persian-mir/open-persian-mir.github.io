@@ -1,0 +1,15 @@
+- title: Iranian Traditional Music Dastgah Classification
+  authors: Sajjad Abdoli, H. R. Moghaddam, et al.
+  year: 2011
+  venue: ISMIR
+  category: Dastgah Classification
+  url: https://ismir2011.ismir.net/papers/PS2-10.pdf
+  summary: Introduces quarter-tone-aware pitch-class histograms for classifying Dastgahs from audio recordings.
+
+- title: The Dastgah Concept in Persian Music
+  authors: Hormoz Farhat
+  year: 1990
+  venue: Cambridge University Press
+  category: Theory & Intonation
+  url: https://doi.org/10.1017/CBO9780511470233
+  summary: Foundational analytical treatise on modal structure, Shahed and Ist pitches, and Gusheh organization.
