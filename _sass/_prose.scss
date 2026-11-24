@@ -1,0 +1,67 @@
+.eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-warm);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.summary {
+  color: var(--muted);
+  font-size: clamp(1rem, 0.35vw + 0.94rem, 1.16rem);
+  max-width: 85ch;
+  margin: 0 0 1.75rem;
+}
+
+.prose {
+  max-width: 95ch;
+
+  h2 {
+    color: var(--accent);
+    font-size: clamp(1.35rem, 1.3vw + 1.05rem, 1.75rem);
+    margin-top: 2.25rem;
+    margin-bottom: 0.65rem;
+  }
+
+  h3 {
+    color: var(--accent-warm);
+    font-size: clamp(1.15rem, 0.8vw + 0.98rem, 1.35rem);
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  img {
+    display: block;
+    max-width: min(100%, 720px);
+    height: auto;
+    margin: 1.5rem auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.98rem;
+    background: var(--surface);
+  }
+
+  th,
+  td {
+    border: 1px solid var(--border);
+    padding: 0.7rem 0.95rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th {
+    background: var(--surface-2);
+    color: var(--accent-deep);
+  }
+}

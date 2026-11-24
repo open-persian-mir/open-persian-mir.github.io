@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   <script>
     window.MathJax = {
@@ -26,5 +27,7 @@
   <footer class="site-footer">
     {{ site.title }} — Open Computational Persian Music Hub
   </footer>
+  <script defer src="{{ '/assets/js/audio-engine.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/interval-figures.js' | relative_url }}"></script>
 </body>
 </html>
