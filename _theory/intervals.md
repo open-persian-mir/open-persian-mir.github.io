@@ -11,6 +11,32 @@ In Persian music theory, the study of intervals (*Fāseleh* or *Boʿd*) begins w
 ## 1. Historical Notation & Pitch Terminology
 
 * **Abjad Notation:** Classical Persian theorists notated pitches using the Arabic/Persian *Abjad* letter sequence (`ا ب ج د هـ و ز ح ط ی` followed by `یا یب یج ...` for the upper octave), accompanied by numerals indicating rhythmic duration.
+
+#### Approximate Abjad-to-Modern Pitch Mapping (*Alif* = *Do*)
+
+| Abjad Letter (Octave 1) | Abjad Numerical Value | Abjad Letter (Octave 2) | Abjad Numerical Value | Equivalent Note |
+| :--- | :---: | :--- | :---: | :--- |
+| `ا` | 1 | `یح` | 18 | *Do* (`C`) |
+| `ب` | 2 | `یط` | 19 | *Re*♭ (`Re b`) |
+| `ج` | 3 | `ک` | 20 | *Re* Koron (`Re` Koron) |
+| `د` | 4 | `کا` | 21 | *Re* (`Re`) |
+| `ه` | 5 | `کب` | 22 | *Mi*♭ (`Mi b`) |
+| `و` | 6 | `کج` | 23 | *Mi* Koron (`Mi` Koron) |
+| `ز` | 7 | `کد` | 24 | *Mi* (`Mi`) |
+| `ح` | 8 | `که` | 25 | *Fa* (`Fa`) |
+| `ط` | 9 | `کو` | 26 | *Sol*♭ (`Sol b`) |
+| `ی` | 10 | `کز` | 27 | *Sol* Koron (`Sol` Koron) |
+| `یا` | 11 | `کح` | 28 | *Sol* (`Sol`) |
+| `یب` | 12 | `کط` | 29 | *La*♭ (`La b`) |
+| `یج` | 13 | `ل` | 30 | *La* Koron (`La` Koron) |
+| `ید` | 14 | `لا` | 31 | *La* (`La`) |
+| `یه` | 15 | `لب` | 32 | *Si*♭ (`Si b`) |
+| `یو` | 16 | `لج` | 33 | *Si* Koron (`Si` Koron) |
+| `یز` | 17 | `لد` | 34 | *Si* (`Si`) |
+| `یح` | 18 | `له` | 35 | *Do* (`Do`) |
+
+> **Important Note:** Because fret/pitch division criteria (*Dastān*) differ between older Persian treatises and contemporary practice, some *Abjad* letters do not align strictly with modern equivalents; this table serves as an approximation for cross-referencing.
+
 * ***Zīr* vs. *Bam* (High vs. Low):** In Persian terminology, higher-frequency pitches are called ***Zīr*** (literally "below/under," also termed *Ḥeddat* or *Tīzī* in classical treatises) and lower-frequency pitches are called ***Bam*** (literally "above/on top," also termed *Ṯeql* or *Gerānī*). This convention originates from instruments like the *ʿŪd*, *Tār*, and *Setār*, where higher-pitched strings sit physically lower on the instrument (*Pāʾīn-dasteh*) and bass strings sit higher (*Bālā-dasteh*).
 * ***Koron* and *Sori*:** Coined by ʿAlī-Naqī Vazīrī (derived via Abjad numerology from the letters of his own name, *ʿAlī-Naqī* $= 270$), *Koron* lowers a pitch by an approximate microtonal step, while *Sori* raises it.
 
@@ -24,36 +50,55 @@ In Persian music theory, the study of intervals (*Fāseleh* or *Boʿd*) begins w
       <option value="440.00">A4 (La = 440.00 Hz)</option>
     </select>
 
-    <label for="ks-cents-slider">Microtonal Offset:</label>
-    <input id="ks-cents-slider" type="range" min="30" max="200" step="5" value="140" />
-    <code id="ks-cents-readout">±140¢</code>
+    <label for="ks-context-select">Intonation Context:</label>
+    <select id="ks-context-select">
+      <option value="theory" selected>Vazīrī Theory / Notation (±50¢ Quarter Tone)</option>
+      <option value="shur">Performance Practice: Shūr (Slightly Lower Koron, ~-60¢)</option>
+      <option value="segah">Performance Practice: Segāh (Slightly Higher Koron, ~-40¢)</option>
+    </select>
   </div>
 
   <div class="figure-controls">
-    <button type="button" class="audio-btn" id="ks-play-koron">▶ Koron (Lowered)</button>
-    <button type="button" class="audio-btn" id="ks-play-natural">▶ Natural (♮)</button>
-    <button type="button" class="audio-btn" id="ks-play-sori">▶ Sori (Raised)</button>
-    <button type="button" class="audio-btn" id="ks-play-compare">▶ Koron → Natural → Sori</button>
+    <button type="button" class="audio-btn" id="ks-play-koron">
+      ▶ {% include accidental-icon.html symbol="koron" %} Koron
+    </button>
+    <button type="button" class="audio-btn" id="ks-play-natural">
+      ▶ {% include accidental-icon.html symbol="natural" %} Natural (0¢)
+    </button>
+    <button type="button" class="audio-btn" id="ks-play-sori">
+      ▶ {% include accidental-icon.html symbol="sori" %} Sori
+    </button>
+    <button type="button" class="audio-btn" id="ks-play-compare">
+      ▶ {% include accidental-icon.html symbol="koron" %} → {% include accidental-icon.html symbol="natural" %} → {% include accidental-icon.html symbol="sori" %}
+    </button>
     <button type="button" class="audio-btn" id="ks-play-chord">▶ Harmonic Cluster</button>
   </div>
 
   <div class="ks-pitch-strip" aria-hidden="true">
     <div class="ks-marker" id="ks-marker-koron">
-      <span class="ks-tag">Koron</span>
+      <span class="ks-tag">{% include accidental-icon.html symbol="koron" %} Koron (U+1D1EA)</span>
       <span class="ks-hz" id="ks-hz-koron">—</span>
     </div>
     <div class="ks-marker is-center" id="ks-marker-natural">
-      <span class="ks-tag">Natural (♮)</span>
+      <span class="ks-tag">{% include accidental-icon.html symbol="natural" %} Natural (0¢)</span>
       <span class="ks-hz" id="ks-hz-natural">—</span>
     </div>
     <div class="ks-marker" id="ks-marker-sori">
-      <span class="ks-tag">Sori</span>
+      <span class="ks-tag">{% include accidental-icon.html symbol="sori" %} Sori (U+1D1E9)</span>
       <span class="ks-hz" id="ks-hz-sori">—</span>
     </div>
   </div>
 
   <div id="ks-readout" class="figure-readout"></div>
+  <figcaption>Interactive Koron (U+1D1EA) &amp; Sori (U+1D1E9) figure: compare Vazīrī's theoretical quarter-tone definition (±50¢) with subtle context-dependent shifts in traditional Radif performance.</figcaption>
 </figure>
+
+### Theory vs. Performance Practice: Fixed Quarter Tone vs. Contextual Intonation
+
+In standard Persian music theory and notation (the system introduced by ʿAlī-Naqī Vazīrī), **Koron** (**𝄳**) is defined as an exact **quarter tone** (one-fourth of a whole tone, or half of a flat $\flat$). In live performance and traditional instrument tuning, however, its exact pitch is not strictly fixed and shifts according to the *Dastgāh* and *Maqām* being performed:
+
+* **In Theory & Notation (Exact Quarter Tone):** To make Persian music notatable on the international five-line staff, Vazīrī divided a whole tone into four equal parts. Within this theoretical framework, *Koron* (**𝄳**) lowers a pitch by an exact quarter tone ($-50\text{ ¢}$, half a semitone), and *Sori* (**𝄲**) raises it by an exact quarter tone ($+50\text{ ¢}$).
+* **In Performance Practice (Unequal / Contextual Intervals):** In traditional *Radif* performance—especially on instruments such as the *Tār*, *Setār*, and *Santūr*—the *Koron* interval is not strictly equal to an exact quarter tone. Guided by ear, musical expression, and the active modal context (for example, in *Dastgāh-e Shūr* versus *Dastgāh-e Segāh*), performers intonation-adjust a *Koron* pitch slightly lower (*bam-tar*) or higher (*zīr-tar*) than a mathematical quarter tone.
 
 ---
 

@@ -292,3 +292,15 @@
     background: rgba(150, 42, 42, 0.15);
   }
 }
+
+.accidental-mark {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -0.15em;
+  line-height: 1;
+}
+
+.accidental-svg {
+  display: block;
+  flex-shrink: 0;
+}
