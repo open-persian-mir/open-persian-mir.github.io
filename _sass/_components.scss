@@ -1,7 +1,9 @@
+@use "variables" as *;
+
 .badge {
-  font-size: 0.84rem;
+  font-size: $font-size-xs;
   font-weight: 600;
-  padding: 0.28rem 0.75rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 999px;
   background: rgba(150, 42, 42, 0.11);
   color: var(--accent-deep);
@@ -17,8 +19,8 @@
   color: var(--accent-deep);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.84rem;
+  padding: 0.4rem 0.7rem;
+  font-size: $font-size-xs;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease;
@@ -41,8 +43,8 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: clamp(1.1rem, 2.5vw, 1.75rem);
-  margin: 1.75rem 0;
+  padding: clamp(1.1rem, 2.5vw, 1.65rem);
+  margin: 1.65rem 0;
 }
 
 .explorer-header {
@@ -51,11 +53,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.6rem 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 
   h2 {
     margin: 0;
-    font-size: clamp(1.2rem, 1vw + 0.95rem, 1.45rem);
+    font-size: $font-size-lg;
     color: var(--accent);
   }
 }
@@ -70,8 +72,8 @@
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 0.9rem 0.85rem;
-  min-height: 82px;
+  padding: 0.85rem 0.8rem;
+  min-height: 78px;
   color: var(--text);
   text-align: left;
   cursor: pointer;
@@ -91,18 +93,18 @@
 
 .note-pitch {
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: $font-size-md;
   color: var(--accent-deep);
 }
 
 .note-name {
-  font-size: 0.88rem;
+  font-size: $font-size-sm;
   color: var(--muted);
 }
 
 .note-cents {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.84rem;
+  font-size: $font-size-xs;
   color: var(--accent);
   font-weight: 600;
   margin-top: 0.3rem;
@@ -110,9 +112,9 @@
 
 /* Interactive Figures & Labs */
 .interactive-figure figcaption {
-  font-size: 0.88rem;
+  font-size: $font-size-sm;
   color: var(--muted);
-  margin-top: 0.85rem;
+  margin-top: 0.8rem;
 }
 
 .figure-controls {
@@ -120,10 +122,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 
   label {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     font-weight: 600;
     color: var(--text);
   }
@@ -135,7 +137,7 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 0.35rem 0.6rem;
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
   }
 }
 
@@ -158,7 +160,7 @@
 }
 
 .figure-readout {
-  font-size: 0.92rem;
+  font-size: $font-size-sm;
   color: var(--text);
 }
 
@@ -174,13 +176,13 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.25rem 0.7rem;
-  font-size: 0.86rem;
+  font-size: $font-size-xs;
 }
 
 .dang-status {
   padding: 0.65rem 0.85rem;
   border-radius: 8px;
-  font-size: 0.92rem;
+  font-size: $font-size-sm;
   border: 1px solid var(--border);
   background: var(--surface-2);
 
@@ -207,13 +209,13 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.35rem;
+  padding: 1.3rem;
   display: flex;
   flex-direction: column;
 
   h3 {
     margin: 0;
-    font-size: 1.15rem;
+    font-size: $font-size-lg;
     color: var(--text);
   }
 }
@@ -227,7 +229,7 @@
 }
 
 .card-meta {
-  font-size: 0.88rem;
+  font-size: $font-size-sm;
   color: var(--muted);
   margin: 0.4rem 0 0.75rem;
 }
@@ -237,40 +239,6 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 1rem 0;
-}
-
-.ks-marker {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.75rem 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-
-  &.is-center {
-    border-color: var(--accent-warm);
-  }
-}
-
-.ks-tag {
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-deep);
-}
-
-.ks-hz {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-@media (max-width: 640px) {
-  .ks-pitch-strip {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 .ks-marker {
@@ -293,6 +261,20 @@
   }
 }
 
+.ks-tag {
+  font-size: $font-size-xs;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-deep);
+}
+
+.ks-hz {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: $font-size-xs;
+  color: var(--muted);
+}
+
 .accidental-mark {
   display: inline-flex;
   align-items: center;
@@ -303,4 +285,10 @@
 .accidental-svg {
   display: block;
   flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .ks-pitch-strip {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

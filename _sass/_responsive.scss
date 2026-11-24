@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @media (max-width: 860px) {
   .navbar-inner,
   .page-shell {
@@ -20,7 +22,7 @@
 
     &::after {
       content: "+";
-      font-size: 1.15rem;
+      font-size: $font-size-lg;
       line-height: 1;
     }
   }
