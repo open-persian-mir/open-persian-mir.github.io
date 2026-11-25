@@ -278,12 +278,15 @@
 .accidental-mark {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   vertical-align: -0.15em;
   line-height: 1;
+  margin: 0 0.08em;
 }
 
 .accidental-svg {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   flex-shrink: 0;
 }
 
