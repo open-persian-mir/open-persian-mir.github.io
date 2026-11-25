@@ -244,7 +244,52 @@ Using the step symbols **ب** (*Baqiyyeh*), **ج** (*Mojannab*), and **ط** (*�
 
 ## Consonance vs. Dissonance (*Molāyem* vs. *Nāmolāyem*)
 
-* **Harmonic vs. Melodic Consonance:** The four seconds (*Ṭanīnī, Baqiyyeh, Mojannab, Bīsh-Ṭanīnī*) are **dissonant when played simultaneously** (harmonically), yet **consonant when played sequentially** (melodically). Classical treatises refer to the first three (*Ṭanīnī, Baqiyyeh, Mojannab*) as *Abʿād-e Thalātheh-ye Laḥniyyeh* ("the three melodic intervals").
+* **Harmonic vs. Melodic Consonance:** The four seconds (*Ṭanīnī, Baqiyyeh, Mojannab, Bīsh-Ṭanīnī*) are **dissonant when played simultaneously**, yet **consonant when played sequentially**.
+
+<figure class="interactive-figure hm-consonance-figure" id="harmonic-melodic-figure">
+  <div class="hm-toolbar">
+    <div class="figure-controls" style="margin-bottom:0;">
+      <label for="hm-root-select">Base:</label>
+      <select id="hm-root-select">
+        <option value="293.66" selected>D4 (293.66 Hz)</option>
+        <option value="261.63">C4 (261.63 Hz)</option>
+        <option value="220.00">A3 (220.00 Hz)</option>
+      </select>
+    </div>
+
+    <div class="hm-mode-switch" role="group" aria-label="Playback mode">
+      <button type="button" class="audio-btn active" id="hm-mode-melodic" data-mode="melodic">Melodic (Sequential)</button>
+      <button type="button" class="audio-btn" id="hm-mode-harmonic" data-mode="harmonic">Harmonic (Simultaneous)</button>
+    </div>
+  </div>
+
+  <div class="hm-single-list" id="hm-list">
+    <div class="hm-chip is-consonant" data-hm-row>
+      <span><strong>ب</strong> Baqiyyeh (~100¢)</span>
+      <span class="hm-status-tag" data-hm-tag>Consonant</span>
+      <button type="button" class="audio-btn" data-hm-cents="100">▶ Play</button>
+    </div>
+    <div class="hm-chip is-consonant" data-hm-row>
+      <span><strong>ج</strong> Mojannab (~150¢)</span>
+      <span class="hm-status-tag" data-hm-tag>Consonant</span>
+      <button type="button" class="audio-btn" data-hm-cents="150">▶ Play</button>
+    </div>
+    <div class="hm-chip is-consonant" data-hm-row>
+      <span><strong>ط</strong> Ṭanīnī (~200¢)</span>
+      <span class="hm-status-tag" data-hm-tag>Consonant</span>
+      <button type="button" class="audio-btn" data-hm-cents="200">▶ Play</button>
+    </div>
+    <div class="hm-chip is-consonant" data-hm-row>
+      <span><strong>هـ</strong> Bīsh-Ṭanīnī (~250¢)</span>
+      <span class="hm-status-tag" data-hm-tag>Consonant</span>
+      <button type="button" class="audio-btn" data-hm-cents="250">▶ Play</button>
+    </div>
+  </div>
+
+  <div id="hm-readout" class="figure-readout"></div>
+  <figcaption>Toggle between Melodic and Harmonic mode to compare how the four seconds behave sequentially versus simultaneously.</figcaption>
+</figure>
+
 * **Melodic Restrictions in Persian Practice:**
   * Two consecutive *Baqiyyeh* intervals ($\text{ب} + \text{ب}$) are considered melodically dissonant.
   * Three consecutive *Ṭanīnī* intervals ($\text{ط} + \text{ط} + \text{ط}$) or three consecutive *Mojannab* intervals ($\text{ج} + \text{ج} + \text{ج}$) are avoided in sequence.
@@ -254,7 +299,7 @@ Using the step symbols **ب** (*Baqiyyeh*), **ج** (*Mojannab*), and **ط** (*�
 
 ## *Dāng* (Tetrachord) & Construction Rules
 
-A ***Dāng*** consists of **four consecutive tones** whose outer boundary spans a **Perfect Fourth** ($\text{Chahārom-e Dorost}$). In Persian classical music, melodic motion (*Gardesh-e Naghamāt*) primarily unfolds within a single *Dāng*, and larger modal ranges are formed by joining multiple *Dāngs* together.
+A ***Dāng*** consists of **four consecutive tones** whose outer boundary spans a **Perfect Fourth**. In Persian classical music, melodic motion primarily unfolds within a single *Dāng*, and larger modal ranges are formed by joining multiple *Dāngs* together.
 
 ### Valid *Dāng* Examples
 * *C*, *D*, *E*, *F* → $\text{ط} + \text{ط} + \text{ب}$
@@ -263,9 +308,113 @@ A ***Dāng*** consists of **four consecutive tones** whose outer boundary spans 
 * *E* <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>, *F*, *G*, *A* <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> → $\text{ج} + \text{ط} + \text{ج}$
 * *B*, *C*, *D*, *E* → $\text{ب} + \text{ط} + \text{ط}$
 
+<figure class="interactive-figure dang-examples-figure" id="dang-examples-figure">
+  <div class="dang-group-label">Valid Dāng Examples (Sequential Playback)</div>
+
+  <div class="dang-example-row" data-freqs="261.63,293.66,329.63,349.23">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">C</span>
+      <span class="dang-note-pill" data-note-idx="1">D</span>
+      <span class="dang-note-pill" data-note-idx="2">E</span>
+      <span class="dang-note-pill" data-note-idx="3">F</span>
+    </div>
+    <span class="dang-formula">ط + ط + ب</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row" data-freqs="293.66,320.24,349.23,392.00">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">D</span>
+      <span class="dang-note-pill" data-note-idx="1">E <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="dang-note-pill" data-note-idx="2">F</span>
+      <span class="dang-note-pill" data-note-idx="3">G</span>
+    </div>
+    <span class="dang-formula">ج + ج + ط</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row" data-freqs="220.00,233.08,261.63,293.66">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">A</span>
+      <span class="dang-note-pill" data-note-idx="1">B♭</span>
+      <span class="dang-note-pill" data-note-idx="2">C</span>
+      <span class="dang-note-pill" data-note-idx="3">D</span>
+    </div>
+    <span class="dang-formula">ب + ط + ط</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row" data-freqs="320.24,349.23,392.00,427.47">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">E <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="dang-note-pill" data-note-idx="1">F</span>
+      <span class="dang-note-pill" data-note-idx="2">G</span>
+      <span class="dang-note-pill" data-note-idx="3">A <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <span class="dang-formula">ج + ط + ج</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row" data-freqs="246.94,261.63,293.66,329.63">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">B</span>
+      <span class="dang-note-pill" data-note-idx="1">C</span>
+      <span class="dang-note-pill" data-note-idx="2">D</span>
+      <span class="dang-note-pill" data-note-idx="3">E</span>
+    </div>
+    <span class="dang-formula">ب + ط + ط</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-group-label is-invalid">Invalid Dāng Counterexamples (Sequential Playback)</div>
+
+  <div class="dang-example-row is-invalid" data-freqs="261.63,285.30,293.66,349.23">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">C</span>
+      <span class="dang-note-pill" data-note-idx="1">D <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="dang-note-pill" data-note-idx="2">D♮</span>
+      <span class="dang-note-pill" data-note-idx="3">F</span>
+    </div>
+    <span class="dang-formula">Quarter-tone step</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row is-invalid" data-freqs="349.23,415.30,427.47,466.16">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">F</span>
+      <span class="dang-note-pill" data-note-idx="1">A♭</span>
+      <span class="dang-note-pill" data-note-idx="2">A <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="dang-note-pill" data-note-idx="3">B♭</span>
+    </div>
+    <span class="dang-formula">Quarter-tone step</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row is-invalid" data-freqs="196.00,207.65,220.00,261.63">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">G</span>
+      <span class="dang-note-pill" data-note-idx="1">A♭</span>
+      <span class="dang-note-pill" data-note-idx="2">A♮</span>
+      <span class="dang-note-pill" data-note-idx="3">C</span>
+    </div>
+    <span class="dang-formula">Consecutive ب + ب</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+
+  <div class="dang-example-row is-invalid" data-freqs="164.81,196.00,207.65,220.00">
+    <div class="dang-notes">
+      <span class="dang-note-pill" data-note-idx="0">E</span>
+      <span class="dang-note-pill" data-note-idx="1">G</span>
+      <span class="dang-note-pill" data-note-idx="2">A♭</span>
+      <span class="dang-note-pill" data-note-idx="3">A♮</span>
+    </div>
+    <span class="dang-formula">Consecutive ب + ب</span>
+    <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+  </div>
+</figure>
+
 ### Invalid *Dāng* Counterexamples
 * *C*, *D* <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>, *D*♮, *F* or *F*, *A*♭, *A* <svg class="accidental-svg" viewBox="0 0 18 24" width="0.8em" height="1.1em" aria-label="Koron" style="display:inline-block;vertical-align:-0.15em;"><path d="M5.5 3v18M5.5 3L14 7.2L5.5 11.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>, *B*♭: **Invalid**, because they contain an interval smaller than *Baqiyyeh* (a "quarter tone").
 * *G*, *A*♭, *A*♮, *C* or *E*, *G*, *A*♭, *A*♮: **Invalid**, because they place two *Baqiyyeh* (half-step) intervals consecutively.
 
 **Rule:** A valid Persian *Dāng* is constructed exclusively from sequences of *Ṭanīnī* ($\text{ط}$), *Mojannab* ($\text{ج}$), *Baqiyyeh* ($\text{ب}$), and *Bīsh-Ṭanīnī* ($\text{هـ}$) spanning a Perfect Fourth, **without ever placing two *Baqiyyeh* intervals consecutively**.
-```
