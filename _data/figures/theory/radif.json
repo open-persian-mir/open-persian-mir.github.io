@@ -1,0 +1,137 @@
+{
+  "gushehClassifier": {
+    "id": "gusheh-classifier-figure",
+    "caption": "Compare Modally Specific gūshehs (tied to a distinct secondary maqām) with Modally Non-Specific gūshehs like Kereshmeh, whose signature rhythmic-melodic contour adapts to different modes.",
+    "items": [
+      {
+        "id": "delkash",
+        "type": "specific",
+        "typeLabel": "Modally Specific",
+        "title": "Delkash (in Māhūr)",
+        "description": "Introduces a distinct secondary maqām in the upper register of Māhūr with its own characteristic accidental (A-koron) and focal pitch.",
+        "notes": [
+          { "label": "G4", "hz": 392.00, "dur": 0.42 },
+          { "label": "A", "accidental": "koron", "hz": 427.47, "dur": 0.42 },
+          { "label": "B♭4", "hz": 466.16, "dur": 0.42 },
+          { "label": "C5", "hz": 523.25, "dur": 0.50 },
+          { "label": "B♭4", "hz": 466.16, "dur": 0.36 },
+          { "label": "A", "accidental": "koron", "hz": 427.47, "dur": 0.52 }
+        ]
+      },
+      {
+        "id": "kereshmeh-mahur",
+        "type": "nonspecific",
+        "typeLabel": "Modally Non-Specific",
+        "title": "Kereshmeh (adapted to Māhūr)",
+        "description": "Kereshmeh has no fixed maqām of its own; its signature rhythmic-melodic pattern here takes the pitches of Māhūr (C–D–E–F).",
+        "notes": [
+          { "label": "C4", "hz": 261.63, "dur": 0.24 },
+          { "label": "D4", "hz": 293.66, "dur": 0.44 },
+          { "label": "E4", "hz": 329.63, "dur": 0.24 },
+          { "label": "F4", "hz": 349.23, "dur": 0.44 },
+          { "label": "E4", "hz": 329.63, "dur": 0.24 },
+          { "label": "D4", "hz": 293.66, "dur": 0.52 }
+        ]
+      },
+      {
+        "id": "kereshmeh-shur",
+        "type": "nonspecific",
+        "typeLabel": "Modally Non-Specific",
+        "title": "Kereshmeh (same pattern in Shūr)",
+        "description": "The exact same Kereshmeh rhythmic-melodic contour now mapped onto the Shūr dāng (D–E-koron–F–G), demonstrating modal portability.",
+        "notes": [
+          { "label": "D4", "hz": 293.66, "dur": 0.24 },
+          { "label": "E", "accidental": "koron", "hz": 320.24, "dur": 0.44 },
+          { "label": "F4", "hz": 349.23, "dur": 0.24 },
+          { "label": "G4", "hz": 392.00, "dur": 0.44 },
+          { "label": "F4", "hz": 349.23, "dur": 0.24 },
+          { "label": "E", "accidental": "koron", "hz": 320.24, "dur": 0.52 }
+        ]
+      }
+    ]
+  },
+  "gushehEtymology": {
+    "id": "gusheh-etymology-figure",
+    "caption": "Filter gūsheh names by their etymological origin to see how geography, tribes, emotions, historical figures, and poetry shaped the Radif's vocabulary.",
+    "categories": [
+      {
+        "id": "places",
+        "label": "Cities & Regions",
+        "note": "Named after historical cities and regions across Greater Iran and the broader Islamic world.",
+        "examples": ["Eṣfahānak (اصفهانک)", "Zābol (زابل)", "Ḥejāz (حجاز)", "Neyshābūrak (نیشابورک)", "Shūshtarī (شوشتری)", "Erāq (عراق)", "Māvarā'onnahr (ماوراءالنهر)", "Ḥeṣār (حصار)"]
+      },
+      {
+        "id": "tribes",
+        "label": "Tribes & Peoples",
+        "note": "Reflecting regional and tribal musical idioms absorbed into the classical repertoire.",
+        "examples": ["Bakhtīārī (بختیاری)", "Nowrūz-e Arab (نوروز عرب)", "Geraylī (گریلی)", "Qajar (قجر)"]
+      },
+      {
+        "id": "emotions",
+        "label": "Emotional States",
+        "note": "Directly describing the expressive affect or mood evoked by the gūsheh.",
+        "examples": ["Sūz-o-Godāz (سوز و گداز)", "Ḥazīn (حزین)", "Ṭarab-Angīz (طرب‌انگیز)", "Jāmeh-Darān (جامه‌دران)", "Mūyeh (مویه)"]
+      },
+      {
+        "id": "people",
+        "label": "Historical Figures",
+        "note": "Preserving the names of historical patrons, musicians, or rulers.",
+        "examples": ["Mehdī Żarrābī (مهدی ضرابی)", "Ḥājjī Ḥasanī (حاجی حسنی)", "Malek Ḥoseyn (ملک حسین)", "Shāh Khatā'ī (شاه ختایی)"]
+      },
+      {
+        "id": "poetry",
+        "label": "Poetic Forms",
+        "note": "Named after classical Persian poetic genres and meters closely paired with those melodies.",
+        "examples": ["Dobeytī (دوبیتی)", "Masnavī (مثنوی)", "Chahār-Pāreh (چهارپاره)"]
+      },
+      {
+        "id": "uncertain",
+        "label": "Uncertain Origin",
+        "note": "Traditional names whose original historical derivation is no longer definitively known.",
+        "examples": ["Basteh-Negār (بسته‌نگار)", "Mokhālef (مخالف)", "Sīkhī (سیخی)", "Bayāt-e Rāje' (بیات راجع)", "Majlesī (مجلسی)"]
+      }
+    ]
+  },
+  "radifTree": {
+    "id": "radif-tree-figure",
+    "caption": "Inspect each layer of the Tree of Persian Classical Music—from ancient roots and the Radif trunk up to live improvisation.",
+    "layers": [
+      {
+        "id": "leaves",
+        "label": "Leaves & Fruit",
+        "concept": "Composed & Improvised Pieces",
+        "detail": "Live performances, taṣnīfs, pīsh-darāmads, and improvisations—all nourished by the modal sap flowing from the Radif."
+      },
+      {
+        "id": "twigs",
+        "label": "Twigs",
+        "concept": "Gūshehs (Specific & Non-Specific)",
+        "detail": "Individual modal and rhythmic models built from dāngs, key scale degrees (ش، خ، ی، م، آ), and sarmashqs, unified via Darāmad and Forūd."
+      },
+      {
+        "id": "subbranches",
+        "label": "5 Sub-Branches",
+        "concept": "The 5 Āvāzes",
+        "detail": "Subsidiary systems: Abū'aṭā, Bayāt-e Tork, Afshārī, and Dashtī (from Shūr), plus Bayāt-e Eṣfahān (from Homāyūn)."
+      },
+      {
+        "id": "branches",
+        "label": "7 Main Branches",
+        "concept": "The 7 Dastgāhs",
+        "detail": "Shūr, Navā, Segāh, Chahārgāh, Homāyūn, Māhūr, and Rāst-Panjgāh—each a multi-modal cycle anchored by its mother maqām."
+      },
+      {
+        "id": "trunk",
+        "label": "Trunk",
+        "concept": "The Radif (Instrumental & Vocal)",
+        "detail": "Codified repertoire of melodic models: Mirzā Abdollāh & Āqā Ḥoseynqolī (instrumental), Davāmī & Karīmī (vocal), and Ma'rūfī's 1963 compilation."
+      },
+      {
+        "id": "roots",
+        "label": "Roots",
+        "concept": "Ancient Iranian Musical Heritage",
+        "detail": "Centuries of collective aesthetic evolution, modal theory, and oral transmission forming the historical foundation."
+      }
+    ]
+  }
+}

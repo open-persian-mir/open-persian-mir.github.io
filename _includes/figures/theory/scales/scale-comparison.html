@@ -1,0 +1,15 @@
+{% assign fig = site.data.figures.theory.scales.soundField %}
+<figure class="interactive-figure sf-figure" id="{{ fig.id }}">
+  <div class="sf-grid">
+    {% for reg in fig.registers %}
+      {% assign freqs = reg.freqs | join: "," %}
+      <div class="sf-card" data-sf-freqs="{{ freqs }}" data-sf-note="{{ reg.note | escape }}">
+        <div class="sf-card-title"><strong>{{ reg.label }}</strong></div>
+        <div class="sf-card-range">{{ reg.range }}</div>
+        <button type="button" class="audio-btn" data-sf-play>▶ Hear Register</button>
+      </div>
+    {% endfor %}
+  </div>
+  <div id="sf-readout" class="figure-readout">Select a register to hear how the same pitch-class pattern (C–D–E–F–G) shifts across the Persian sound field.</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

@@ -1,0 +1,21 @@
+{% assign fig = site.data.figures.theory.radif.gushehClassifier %}
+<figure class="interactive-figure gc-figure" id="{{ fig.id }}">
+  {% for item in fig.items %}
+    {% assign freqs = item.notes | map: "hz" | join: "," %}
+    {% assign durs = item.notes | map: "dur" | join: "," %}
+    <div class="gc-row is-{{ item.type }}" data-gc-freqs="{{ freqs }}" data-gc-durs="{{ durs }}" data-gc-desc="{{ item.description | escape }}">
+      <div class="gc-header">
+        <span><strong>{{ item.title }}</strong></span>
+        <span class="gc-tag">{{ item.typeLabel }}</span>
+        <button type="button" class="audio-btn" data-gc-play>▶ Play</button>
+      </div>
+      <div class="gc-notes">
+        {% for n in item.notes %}
+          <span class="gc-pill">{{ n.label }}{% if n.accidental %} {% include accidental.html type=n.accidental %}{% endif %}</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <div id="gc-readout" class="figure-readout">Click Play to compare a modally specific gūsheh (Delkash) with a modally non-specific pattern (Kereshmeh) adapted to two different modes.</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

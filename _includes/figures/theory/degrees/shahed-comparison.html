@@ -1,0 +1,22 @@
+{% assign fig = site.data.figures.theory.degrees.shahedComparison %}
+<figure class="interactive-figure sh-figure" id="{{ fig.id }}">
+  {% for m in fig.modes %}
+    {% assign freqs = m.notes | map: "hz" | join: "," %}
+    <div class="sh-row" data-sh-freqs="{{ freqs }}" data-sh-desc="{{ m.description | escape }}">
+      <div class="sh-header">
+        <span class="sh-title"><strong>{{ m.title }}</strong></span>
+        <span class="sh-tag">{{ m.tag }}</span>
+        <button type="button" class="audio-btn" data-sh-play>▶ Play</button>
+      </div>
+      <div class="sh-notes">
+        {% for n in m.notes %}
+          <span class="sh-pill{% if n.isShahed %} is-shahed{% endif %}">
+            {{ n.label }}{% if n.isShahed %} <small>(ش)</small>{% endif %}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <div id="sh-readout" class="figure-readout">Click Play on either row to compare single-Shāhed vs. dual-Shāhed melodic gravity.</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

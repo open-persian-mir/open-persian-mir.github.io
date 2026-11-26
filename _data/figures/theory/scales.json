@@ -1,0 +1,153 @@
+{
+  "soundField": {
+    "id": "sound-field-figure",
+    "caption": "Explore how the Persian Sound Field (Bastar-e Ṣowtī) spans multiple pitch registers (Mantaqeh-ye Ṣowtī) from the lowest note of the Oud to the highest note of the Santūr, while the Potential Scale collapses all pitch classes into a single octave.",
+    "registers": [
+      {
+        "id": "oud-low",
+        "label": "Oud Low Register (Bam)",
+        "range": "C2 – G2 (65–98 Hz)",
+        "note": "Marks the lower boundary of the traditional Persian sound field (bastar-e ṣowtī).",
+        "freqs": [65.41, 73.42, 82.41, 87.31, 98.00]
+      },
+      {
+        "id": "tar-6th",
+        "label": "Tār — 6th String (Lower Register)",
+        "range": "C3 – G3 (131–196 Hz)",
+        "note": "Lower instrumental register on the tār, sounding an octave below the first string.",
+        "freqs": [130.81, 146.83, 164.81, 174.61, 196.00]
+      },
+      {
+        "id": "tar-1st",
+        "label": "Tār — 1st String (Middle Register)",
+        "range": "C4 – G4 (262–392 Hz)",
+        "note": "Primary melodic register of the tār and setār; forms the standard reference octave for the Potential Scale.",
+        "freqs": [261.63, 293.66, 329.63, 349.23, 392.00]
+      },
+      {
+        "id": "santur-high",
+        "label": "Santūr High Register (Zīr)",
+        "range": "C5 – G5 (523–784 Hz)",
+        "note": "Approaches the upper boundary of the Persian sound field (highest notes of the santūr).",
+        "freqs": [523.25, 587.33, 659.25, 698.46, 783.99]
+      }
+    ]
+  },
+  "scaleComparison": {
+    "id": "scale-comparison-figure",
+    "caption": "Hear the difference between the unfiltered Potential Scale, a consonant 7-note Actual Scale (two dāngs + ṭanīnī), an invalid 7-note counterexample, and a 5-note Pentatonic scale.",
+    "scales": [
+      {
+        "id": "potential",
+        "title": "Potential Scale (Gām-e Bel-Qovveh — C4 to C5)",
+        "tag": "Total Inventory",
+        "status": "warning",
+        "description": "Contains every microtonal pitch available in one octave (including Vazīrī's D♭ and F♯). Playing all of them in one melody sounds cluttered and unmusical.",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D♭", "hz": 277.18 },
+          { "label": "D", "accidental": "koron", "hz": 285.30 },
+          { "label": "D", "hz": 293.66 },
+          { "label": "E♭", "hz": 311.13 },
+          { "label": "E", "accidental": "koron", "hz": 320.24 },
+          { "label": "E", "hz": 329.63 },
+          { "label": "F", "hz": 349.23 },
+          { "label": "F", "accidental": "sori", "hz": 359.46 },
+          { "label": "F♯", "hz": 369.99 },
+          { "label": "G", "hz": 392.00 },
+          { "label": "A♭", "hz": 415.30 },
+          { "label": "A", "accidental": "koron", "hz": 427.47 },
+          { "label": "A", "hz": 440.00 },
+          { "label": "B♭", "hz": 466.16 },
+          { "label": "B", "accidental": "koron", "hz": 479.82 },
+          { "label": "B", "hz": 493.88 },
+          { "label": "C", "hz": 523.25 }
+        ]
+      },
+      {
+        "id": "actual-valid",
+        "title": "Valid Actual Scale (Gām-e Bel-Fe'l — Heptatonic)",
+        "tag": "7 Consonant Pitches",
+        "status": "valid",
+        "description": "A consonant 7-note selection (C–D–E–F–G–A–B♭–C) structured as two dāngs plus a ṭanīnī. Every note here can be used coherently in a piece.",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "hz": 293.66 },
+          { "label": "E", "hz": 329.63 },
+          { "label": "F", "hz": 349.23 },
+          { "label": "G", "hz": 392.00 },
+          { "label": "A", "hz": 440.00 },
+          { "label": "B♭", "hz": 466.16 },
+          { "label": "C", "hz": 523.25 }
+        ]
+      },
+      {
+        "id": "actual-invalid",
+        "title": "Invalid 7-Note Selection (Counterexample)",
+        "tag": "Violates Consonance",
+        "status": "invalid",
+        "description": "An arbitrary pick (C, D-koron, E-koron, E♮, F, B) breaks Persian melodic consonance rules, creating awkward microtonal clusters and harsh leaps.",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "accidental": "koron", "hz": 285.30 },
+          { "label": "E", "accidental": "koron", "hz": 320.24 },
+          { "label": "E♮", "hz": 329.63 },
+          { "label": "F", "hz": 349.23 },
+          { "label": "B", "hz": 493.88 }
+        ]
+      },
+      {
+        "id": "pentatonic",
+        "title": "Pentatonic Scale (5-Note Comparison)",
+        "tag": "5 Notes / No Semitones",
+        "status": "neutral",
+        "description": "Five pitches per octave (C–D–E–G–A–C) with no semitones—common in East Asian, African, and Indigenous American traditions.",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "hz": 293.66 },
+          { "label": "E", "hz": 329.63 },
+          { "label": "G", "hz": 392.00 },
+          { "label": "A", "hz": 440.00 },
+          { "label": "C", "hz": 523.25 }
+        ]
+      }
+    ]
+  },
+  "maqamBuilder": {
+    "id": "maqam-builder-figure",
+    "caption": "All three examples use the exact same Actual Scale (C–D–E–F–G–A–B♭–C), yet changing the active dāng, degree hierarchy, and melodic model (sarmashq) produces a completely different modal ethos.",
+    "degrees": [
+      { "num": 1, "label": "C", "hz": 261.63 },
+      { "num": 2, "label": "D", "hz": 293.66 },
+      { "num": 3, "label": "E", "hz": 329.63 },
+      { "num": 4, "label": "F", "hz": 349.23 },
+      { "num": 5, "label": "G", "hz": 392.00 },
+      { "num": 6, "label": "A", "hz": 440.00 },
+      { "num": 7, "label": "B♭", "hz": 466.16 },
+      { "num": 8, "label": "C5", "hz": 523.25 }
+    ],
+    "presets": [
+      {
+        "id": "textbook-mode",
+        "label": "Focus on G (5th), Resolve on D (2nd)",
+        "focus": [1, 4],
+        "sequence": [4, 5, 4, 6, 5, 4, 3, 2, 1],
+        "note": "Dwelling on degree 5 (G) and concluding on degree 2 (D) establishes a clear degree hierarchy and modal ethos."
+      },
+      {
+        "id": "lower-dang",
+        "label": "Single Lower Dāng (C–D–E–F)",
+        "focus": [0, 2],
+        "sequence": [2, 3, 2, 1, 2, 1, 0],
+        "note": "Confining the melody to a single 4-note dāng (C–D–E–F) with emphasis on E and cadence on C illustrates how a Persian mode can operate within just four pitches."
+      },
+      {
+        "id": "upper-dang",
+        "label": "Upper Dāng (G–A–B♭–C5) + Sarmashq",
+        "focus": [4, 6],
+        "sequence": [4, 5, 6, 5, 7, 6, 5, 4],
+        "note": "Using the upper tetrachord (G–A–B♭–C5) with a recurring melodic turn around A and B♭ creates a bright, elevated modal character."
+      }
+    ]
+  }
+}

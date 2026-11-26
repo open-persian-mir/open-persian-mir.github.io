@@ -1,0 +1,19 @@
+{% assign fig = site.data.figures.theory.dastgah.dastgahCycle %}
+<figure class="interactive-figure dc-figure" id="{{ fig.id }}">
+  <div class="dc-track">
+    {% for st in fig.stages %}
+      {% assign freqs = st.freqs | join: "," %}
+      <div class="dc-stage{% if forloop.first %} is-active{% endif %}" data-dc-freqs="{{ freqs }}" data-dc-desc="{{ st.description | escape }}">
+        <div class="dc-step-badge">{{ st.step }}</div>
+        <div class="dc-stage-title"><strong>{{ st.title }}</strong></div>
+        <div class="dc-stage-role">{{ st.role }}</div>
+        <button type="button" class="audio-btn" data-dc-play>▶ Hear Stage</button>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="figure-controls">
+    <button type="button" class="audio-btn" id="dc-play-all">▶ Play Full Cycle (1 → 4)</button>
+  </div>
+  <div id="dc-readout" class="figure-readout">{{ fig.stages.first.description }}</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

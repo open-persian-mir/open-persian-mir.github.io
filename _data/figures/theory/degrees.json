@@ -1,0 +1,136 @@
+{
+  "degreeMatrix": {
+    "id": "degree-matrix-figure",
+    "caption": "Explore how the five functional degrees operate within a single scale (C–D–E–F–G–A–B♭–C). Select any role to highlight its position and hear a short phrase demonstrating its function.",
+    "degrees": [
+      { "num": 1, "label": "C", "hz": 261.63 },
+      { "num": 2, "label": "D", "hz": 293.66 },
+      { "num": 3, "label": "E", "hz": 329.63 },
+      { "num": 4, "label": "F", "hz": 349.23 },
+      { "num": 5, "label": "G", "hz": 392.00 },
+      { "num": 6, "label": "A", "hz": 440.00 },
+      { "num": 7, "label": "B♭", "hz": 466.16 },
+      { "num": 8, "label": "C5", "hz": 523.25 }
+    ],
+    "roles": [
+      {
+        "id": "shahed",
+        "name": "Shāhed (ش)",
+        "targetIdx": 4,
+        "badge": "ش",
+        "sequence": [4, 5, 4, 3, 4, 5, 4],
+        "description": "Shāhed (G): The melodic center of gravity. Notice how the phrase repeatedly returns to and dwells on G, bearing witness to the mode."
+      },
+      {
+        "id": "khatemeh",
+        "name": "Khātemeh (خ)",
+        "targetIdx": 1,
+        "badge": "خ",
+        "sequence": [4, 3, 2, 1, 0, 1],
+        "description": "Khātemeh (D): Definitive final closure. The descending cadence settles firmly on D, signaling that the piece has concluded."
+      },
+      {
+        "id": "ist",
+        "name": "Īst (ی)",
+        "targetIdx": 3,
+        "badge": "ی",
+        "sequence": [4, 5, 4, 3],
+        "description": "Īst (F): Temporary pause. The phrase halts on F, creating a suspended breath that makes the listener anticipate continuation."
+      },
+      {
+        "id": "moteghayyer",
+        "name": "Moteghayyer (م)",
+        "targetIdx": 6,
+        "badge": "م",
+        "sequence": [4, 5, "Bnat", 7, 6, 5, 4],
+        "description": "Moteghayyer (B♮ / B♭): Variable degree. Pulled up to B♮ (493.88 Hz) when ascending to C5, then relaxed to B♭ (466.16 Hz) when descending."
+      },
+      {
+        "id": "aghaz",
+        "name": "Āghāz (آ)",
+        "targetIdx": 2,
+        "badge": "آ",
+        "sequence": [2, 3, 4, 5, 4],
+        "description": "Āghāz (E): Initial pitch. Launches the opening contour toward the Shāhed (G), though changing the starting note does not alter the maqām."
+      }
+    ]
+  },
+  "shahedComparison": {
+    "id": "shahed-comparison-figure",
+    "caption": "Compare a single-Shāhed melodic center (as in Darāmad II of Navā) with a dual-Shāhed balance (as in Darāmad I of Rāst-Panjgāh).",
+    "modes": [
+      {
+        "id": "single",
+        "title": "Single Shāhed (e.g., Darāmad II of Navā)",
+        "tag": "1 Center (G)",
+        "description": "Melodic gravity orbits a single focal pitch (G, marked ش), giving the phrase a unified, concentrated axis.",
+        "notes": [
+          { "label": "F", "hz": 349.23, "isShahed": false },
+          { "label": "G", "hz": 392.00, "isShahed": true },
+          { "label": "A♭", "hz": 415.30, "isShahed": false },
+          { "label": "G", "hz": 392.00, "isShahed": true },
+          { "label": "F", "hz": 349.23, "isShahed": false },
+          { "label": "G", "hz": 392.00, "isShahed": true },
+          { "label": "G", "hz": 392.00, "isShahed": true }
+        ]
+      },
+      {
+        "id": "dual",
+        "title": "Dual Shāhed (e.g., Darāmad I of Rāst-Panjgāh)",
+        "tag": "2 Centers (F & A)",
+        "description": "Melodic emphasis alternates between two focal degrees (F and A, both marked ش), creating a balanced two-pole modal tension.",
+        "notes": [
+          { "label": "F", "hz": 349.23, "isShahed": true },
+          { "label": "G", "hz": 392.00, "isShahed": false },
+          { "label": "A", "hz": 440.00, "isShahed": true },
+          { "label": "B♭", "hz": 466.16, "isShahed": false },
+          { "label": "A", "hz": 440.00, "isShahed": true },
+          { "label": "G", "hz": 392.00, "isShahed": false },
+          { "label": "F", "hz": 349.23, "isShahed": true }
+        ]
+      }
+    ]
+  },
+  "moteghayyerLab": {
+    "id": "moteghayyer-lab-figure",
+    "caption": "Hear directional pitch attraction on a Moteghayyer (م) degree: raised when ascending toward the upper neighbor, lowered when descending toward the lower neighbor.",
+    "variants": [
+      {
+        "id": "ascending",
+        "label": "Ascending Pull (Raised م → B♮)",
+        "description": "Moving upward toward C5, the Moteghayyer is pulled higher to B♮ (493.88 Hz) to narrow the step into C5.",
+        "notes": [
+          { "label": "G", "hz": 392.00, "isVar": false },
+          { "label": "A", "hz": 440.00, "isVar": false },
+          { "label": "B♮ (م)", "hz": 493.88, "isVar": true },
+          { "label": "C5", "hz": 523.25, "isVar": false }
+        ]
+      },
+      {
+        "id": "descending",
+        "label": "Descending Pull (Lowered م → B♭)",
+        "description": "Moving downward away from C5, the Moteghayyer relaxes to B♭ (466.16 Hz) to lean closer toward A and G.",
+        "notes": [
+          { "label": "C5", "hz": 523.25, "isVar": false },
+          { "label": "B♭ (م)", "hz": 466.16, "isVar": true },
+          { "label": "A", "hz": 440.00, "isVar": false },
+          { "label": "G", "hz": 392.00, "isVar": false }
+        ]
+      },
+      {
+        "id": "roundtrip",
+        "label": "Full Arch (B♮ Up → B♭ Down)",
+        "description": "Combined melodic arch: the exact same scale degree (7th) shifts from B♮ in ascent to B♭ in descent.",
+        "notes": [
+          { "label": "G", "hz": 392.00, "isVar": false },
+          { "label": "A", "hz": 440.00, "isVar": false },
+          { "label": "B♮ (م)", "hz": 493.88, "isVar": true },
+          { "label": "C5", "hz": 523.25, "isVar": false },
+          { "label": "B♭ (م)", "hz": 466.16, "isVar": true },
+          { "label": "A", "hz": 440.00, "isVar": false },
+          { "label": "G", "hz": 392.00, "isVar": false }
+        ]
+      }
+    ]
+  }
+}

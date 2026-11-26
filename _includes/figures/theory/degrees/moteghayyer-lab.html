@@ -1,0 +1,19 @@
+{% assign fig = site.data.figures.theory.degrees.moteghayyerLab %}
+<figure class="interactive-figure mt-figure" id="{{ fig.id }}">
+  {% for v in fig.variants %}
+    {% assign freqs = v.notes | map: "hz" | join: "," %}
+    <div class="mt-row" data-mt-freqs="{{ freqs }}" data-mt-desc="{{ v.description | escape }}">
+      <div class="mt-header">
+        <span><strong>{{ v.label }}</strong></span>
+        <button type="button" class="audio-btn" data-mt-play>▶ Play</button>
+      </div>
+      <div class="mt-notes">
+        {% for n in v.notes %}
+          <span class="mt-pill{% if n.isVar %} is-var{% endif %}">{{ n.label }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <div id="mt-readout" class="figure-readout">Click Play to hear how directional melodic attraction alters the Moteghayyer (م).</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

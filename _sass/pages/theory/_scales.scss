@@ -1,0 +1,135 @@
+.sf-figure {
+  .sf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sf-card {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(120, 90, 60, 0.28);
+    background: rgba(255, 255, 255, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    &.is-active {
+      border-color: #7c2d12;
+      background: rgba(124, 45, 18, 0.08);
+    }
+  }
+
+  .sf-card-range {
+    font-size: 0.84rem;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.sc-figure {
+  .sc-row {
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(120, 90, 60, 0.25);
+    margin-bottom: 0.65rem;
+    background: rgba(255, 255, 255, 0.35);
+
+    &.is-valid {
+      border-color: rgba(45, 115, 75, 0.45);
+      background: rgba(45, 115, 75, 0.06);
+    }
+
+    &.is-invalid {
+      border-color: rgba(165, 55, 45, 0.45);
+      background: rgba(165, 55, 45, 0.06);
+    }
+  }
+
+  .sc-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sc-tag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(120, 90, 60, 0.14);
+  }
+
+  .sc-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .sc-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.22rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(120, 90, 60, 0.28);
+    background: rgba(255, 255, 255, 0.55);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+
+    &.is-lit {
+      background: #7c2d12;
+      color: #fff;
+      border-color: #7c2d12;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.mb-figure {
+  .mb-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mb-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mb-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.45rem 0.35rem;
+    border-radius: 8px;
+    border: 1px solid rgba(120, 90, 60, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+
+    &.is-focus {
+      border-color: #7c2d12;
+      background: rgba(124, 45, 18, 0.08);
+    }
+
+    &.is-lit {
+      background: #7c2d12;
+      color: #fff;
+      border-color: #7c2d12;
+    }
+  }
+
+  .mb-num {
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+
+  .mb-label {
+    font-weight: 700;
+  }
+}

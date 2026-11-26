@@ -1,0 +1,24 @@
+{% assign fig = site.data.figures.theory.scales.maqamBuilder %}
+<figure class="interactive-figure mb-figure" id="{{ fig.id }}">
+  <div class="figure-controls mb-presets" role="group" aria-label="Maqām presets">
+    {% for p in fig.presets %}
+      <button type="button" class="audio-btn{% if forloop.first %} active{% endif %}" data-mb-preset="{{ p.id }}">{{ p.label }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="mb-strip">
+    {% for deg in fig.degrees %}
+      <div class="mb-pill" data-mb-deg="{{ forloop.index0 }}" data-hz="{{ deg.hz }}">
+        <span class="mb-num">{{ deg.num }}</span>
+        <span class="mb-label">{{ deg.label }}</span>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="figure-controls">
+    <button type="button" class="audio-btn" id="mb-play">▶ Play Modal Example</button>
+  </div>
+
+  <div id="mb-readout" class="figure-readout"></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

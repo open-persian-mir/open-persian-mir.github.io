@@ -1,0 +1,29 @@
+{% assign fig = site.data.figures.theory.radif.gushehEtymology %}
+<figure class="interactive-figure ge-figure" id="{{ fig.id }}">
+  <div class="figure-controls ge-tabs" role="tablist" aria-label="Gūsheh etymology categories">
+    {% for cat in fig.categories %}
+      <button
+        type="button"
+        class="audio-btn{% if forloop.first %} active{% endif %}"
+        data-ge-cat="{{ cat.id }}"
+        role="tab"
+        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+      >{{ cat.label }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="ge-panels">
+    {% for cat in fig.categories %}
+      <div class="ge-panel{% unless forloop.first %} is-hidden{% endunless %}" data-ge-panel="{{ cat.id }}">
+        <p class="ge-note">{{ cat.note }}</p>
+        <div class="ge-chips">
+          {% for ex in cat.examples %}
+            <span class="ge-chip">{{ ex }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

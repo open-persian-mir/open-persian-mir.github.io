@@ -1,0 +1,16 @@
+{% assign fig = site.data.figures.theory.dastgah.forudMahur %}
+<figure class="interactive-figure fm-figure" id="{{ fig.id }}">
+  <div class="fm-strip">
+    {% for n in fig.notes %}
+      <div class="fm-pill{% if n.accent %} is-accent{% endif %}" data-fm-hz="{{ n.hz }}" data-fm-dur="{{ n.dur }}">
+        {% if n.accent %}<span class="fm-accent">>></span>{% endif %}
+        <span class="fm-note">{{ n.label }}</span>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="figure-controls">
+    <button type="button" class="audio-btn" id="fm-play">▶ Play Forūd-e Māhūr</button>
+  </div>
+  <div id="fm-readout" class="figure-readout">Click Play to hear the characteristic descending cadential formula returning to C4.</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

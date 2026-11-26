@@ -1,0 +1,112 @@
+.dm-figure {
+  .dm-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .dm-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .dm-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.45rem 0.35rem;
+    border-radius: 8px;
+    border: 1px solid rgba(120, 90, 60, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+
+    &.is-target {
+      border-color: #7c2d12;
+      background: rgba(124, 45, 18, 0.1);
+    }
+
+    &.is-lit {
+      background: #7c2d12;
+      color: #fff;
+      border-color: #7c2d12;
+    }
+  }
+
+  .dm-num {
+    font-size: 0.72rem;
+    opacity: 0.7;
+  }
+
+  .dm-label {
+    font-weight: 700;
+  }
+
+  .dm-badge {
+    min-height: 1.1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.1rem;
+  }
+}
+
+.sh-figure,
+.mt-figure {
+  .sh-row,
+  .mt-row {
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(120, 90, 60, 0.25);
+    margin-bottom: 0.65rem;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .sh-header,
+  .mt-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sh-tag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(120, 90, 60, 0.14);
+  }
+
+  .sh-notes,
+  .mt-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .sh-pill,
+  .mt-pill {
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    border: 1px solid rgba(120, 90, 60, 0.28);
+    background: rgba(255, 255, 255, 0.55);
+    transition: background-color 0.15s ease, transform 0.15s ease;
+
+    &.is-shahed,
+    &.is-var {
+      border-color: #7c2d12;
+      background: rgba(124, 45, 18, 0.1);
+      font-weight: 700;
+    }
+
+    &.is-lit {
+      background: #7c2d12;
+      color: #fff;
+      border-color: #7c2d12;
+      transform: translateY(-1px);
+    }
+  }
+}

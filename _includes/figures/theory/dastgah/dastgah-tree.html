@@ -1,0 +1,44 @@
+{% assign fig = site.data.figures.theory.dastgah.dastgahTree %}
+<figure class="interactive-figure dt-figure" id="{{ fig.id }}">
+  <div class="dt-root">Radif (ردیف) — 7 Dastgāhs & 5 Āvāzes</div>
+
+  <div class="dt-branches" role="tablist" aria-label="Seven Dastgāhs">
+    {% for d in fig.dastgahs %}
+      <button
+        type="button"
+        class="audio-btn dt-branch-btn{% if forloop.first %} active{% endif %}"
+        data-dt-id="{{ d.id }}"
+        role="tab"
+        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+      >
+        {{ d.name }} <span class="dt-persian">({{ d.persian }})</span>
+        {% if d.avazes.size > 0 %}
+          <span class="dt-badge">+{{ d.avazes.size }} Āvāz</span>
+        {% endif %}
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="dt-panels">
+    {% for d in fig.dastgahs %}
+      <div class="dt-panel{% unless forloop.first %} is-hidden{% endunless %}" data-dt-panel="{{ d.id }}">
+        <div class="dt-panel-title">
+          <strong>Dastgāh-e {{ d.name }}</strong> ({{ d.persian }}) · Mother Maqām: <em>{{ d.motherMaqam }}</em>
+        </div>
+        <p class="dt-panel-note">{{ d.note }}</p>
+        {% if d.avazes.size > 0 %}
+          <div class="dt-avaz-list">
+            <span class="dt-avaz-heading">Derived Āvāzes:</span>
+            {% for av in d.avazes %}
+              <span class="dt-avaz-pill">{{ av }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="dt-avaz-list"><em>No canonical derived Āvāzes.</em></div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

@@ -1,0 +1,18 @@
+{% assign fig = site.data.figures.theory.radif.radifTree %}
+<figure class="interactive-figure rt-figure" id="{{ fig.id }}">
+  <div class="rt-stack">
+    {% for layer in fig.layers %}
+      <button
+        type="button"
+        class="rt-layer{% if forloop.first %} is-active{% endif %}"
+        data-rt-id="{{ layer.id }}"
+        data-rt-detail="{{ layer.detail | escape }}"
+      >
+        <span class="rt-layer-label">{{ layer.label }}</span>
+        <span class="rt-layer-concept">{{ layer.concept }}</span>
+      </button>
+    {% endfor %}
+  </div>
+  <div id="rt-readout" class="figure-readout">{{ fig.layers.first.detail }}</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

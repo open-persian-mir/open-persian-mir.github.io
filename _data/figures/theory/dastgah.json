@@ -1,0 +1,114 @@
+{
+  "dastgahCycle": {
+    "id": "dastgah-cycle-figure",
+    "caption": "Step through the cyclic architecture of a Dastgāh: opening in the Mother Maqām (Darāmad), modulating through secondary Maqāms in higher registers, and returning home via the Forūd.",
+    "stages": [
+      {
+        "id": "daramaad",
+        "step": "1",
+        "title": "Darāmad (درآمد)",
+        "role": "Mother Maqām — Entry",
+        "description": "Introduces the mother maqām in the lower/middle register, establishing the home tonal center and primary modal ethos.",
+        "freqs": [261.63, 293.66, 329.63, 293.66, 261.63]
+      },
+      {
+        "id": "gusheh-1",
+        "step": "2",
+        "title": "Secondary Gūsheh I",
+        "role": "First Modulation",
+        "description": "Shifts the focal degree upward into a related secondary maqām, introducing fresh modal color while remaining connected to the parent system.",
+        "freqs": [329.63, 349.23, 392.00, 349.23, 329.63]
+      },
+      {
+        "id": "owj",
+        "step": "3",
+        "title": "High-Register Gūsheh (Owj)",
+        "role": "Peak Modal Contrast",
+        "description": "Reaches the upper register (e.g., Delkash or Erāq in Māhūr), maximizing emotional intensity and modal distance from the Darāmad.",
+        "freqs": [392.00, 440.00, 466.16, 523.25, 466.16, 440.00]
+      },
+      {
+        "id": "forud",
+        "step": "4",
+        "title": "Forūd (فرود)",
+        "role": "Return to Mother Maqām",
+        "description": "A recognizable cadential melodic model (sarmashq) that descends back to the mother maqām's finalis, closing the modal cycle smoothly.",
+        "freqs": [349.23, 329.63, 293.66, 261.63, 246.94, 261.63]
+      }
+    ]
+  },
+  "forudMahur": {
+    "id": "forud-mahur-figure",
+    "caption": "Interactive cadential model of a classic Forūd-e Māhūr: stepwise descent through the lower dāng, lower neighbor dip to B3, and resolution to C4.",
+    "notes": [
+      { "label": "F4", "hz": 349.23, "accent": true, "dur": 0.55 },
+      { "label": "E4", "hz": 329.63, "accent": true, "dur": 0.55 },
+      { "label": "D4", "hz": 293.66, "accent": false, "dur": 0.25 },
+      { "label": "C4", "hz": 261.63, "accent": false, "dur": 0.42 },
+      { "label": "B3", "hz": 246.94, "accent": false, "dur": 0.42 },
+      { "label": "C4", "hz": 261.63, "accent": false, "dur": 0.75 }
+    ]
+  },
+  "dastgahTree": {
+    "id": "dastgah-tree-figure",
+    "caption": "Explore the 7 canonical Dastgāhs and 5 derived Āvāzes (12 modal branches) of Persian classical music.",
+    "dastgahs": [
+      {
+        "id": "shur",
+        "name": "Shūr",
+        "persian": "شور",
+        "motherMaqam": "Maqām-e Shūr",
+        "avazes": ["Abū'aṭā (ابوعطا)", "Bayāt-e Tork (بیات ترک)", "Afshārī (افشاری)", "Dashtī (دشتی)"],
+        "note": "The largest branch of the Persian modal system, giving rise to four of the five canonical Āvāzes (plus Bayāt-e Kord in some classifications)."
+      },
+      {
+        "id": "nava",
+        "name": "Navā",
+        "persian": "نوا",
+        "motherMaqam": "Maqām-e Navā",
+        "avazes": [],
+        "note": "Independent Dastgāh with no canonical derived Āvāzes; deeply linked to the Shūr modal family in tuning and ethos."
+      },
+      {
+        "id": "segah",
+        "name": "Segāh",
+        "persian": "سه‌گاه",
+        "motherMaqam": "Maqām-e Segāh",
+        "avazes": [],
+        "note": "Independent Dastgāh anchored on a neutral (koron) tonic, featuring major modally specific gūshehs such as Zābol and Mokhālef."
+      },
+      {
+        "id": "chahargah",
+        "name": "Chahārgāh",
+        "persian": "چهارگاه",
+        "motherMaqam": "Maqām-e Chahārgāh",
+        "avazes": [],
+        "note": "Independent Dastgāh characterized by symmetrical neutral-interval tetrachords and prominent gūshehs like Zābol, Mokhālef, and Ḥeṣār."
+      },
+      {
+        "id": "homayun",
+        "name": "Homāyūn",
+        "persian": "همایون",
+        "motherMaqam": "Maqām-e Homāyūn",
+        "avazes": ["Bayāt-e Eṣfahān (بیات اصفهان)"],
+        "note": "Parent Dastgāh of the fifth canonical Āvāz, Bayāt-e Eṣfahān; also houses expansive gūshehs such as Shūshtarī."
+      },
+      {
+        "id": "mahur",
+        "name": "Māhūr",
+        "persian": "ماهور",
+        "motherMaqam": "Maqām-e Māhūr",
+        "avazes": [],
+        "note": "Independent Dastgāh renowned for wide-ranging modulations (e.g., Delkash, Erāq) unified by its unmistakable Forūd-e Māhūr."
+      },
+      {
+        "id": "rast-panjgah",
+        "name": "Rāst-Panjgāh",
+        "persian": "راست‌پنجگاه",
+        "motherMaqam": "Maqām-e Rāst-Panjgāh",
+        "avazes": [],
+        "note": "Independent Dastgāh that shares Māhūr's basic scale foundation while traversing an unusually broad set of modulations across other dastgāhs."
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{% assign fig = site.data.figures.theory.degrees.degreeMatrix %}
+<figure class="interactive-figure dm-figure" id="{{ fig.id }}">
+  <div class="figure-controls dm-roles" role="group" aria-label="Scale degree roles">
+    {% for r in fig.roles %}
+      <button
+        type="button"
+        class="audio-btn{% if forloop.first %} active{% endif %}"
+        data-dm-role-id="{{ r.id }}"
+      >{{ r.name }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="dm-strip">
+    {% for deg in fig.degrees %}
+      <div class="dm-pill" data-dm-deg="{{ forloop.index0 }}" data-hz="{{ deg.hz }}">
+        <span class="dm-num">{{ deg.num }}</span>
+        <span class="dm-label">{{ deg.label }}</span>
+        <span class="dm-badge" data-dm-badge></span>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="figure-controls">
+    <button type="button" class="audio-btn" id="dm-play">▶ Hear Degree Function</button>
+  </div>
+
+  <div id="dm-readout" class="figure-readout"></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>
