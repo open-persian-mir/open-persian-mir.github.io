@@ -1,0 +1,31 @@
+{% assign fig = site.data.figures.theory.intervals.harmonicMelodic %}
+<figure class="interactive-figure hm-consonance-figure" id="{{ fig.id }}">
+  <div class="hm-toolbar">
+    <div class="figure-controls hm-base-control">
+      <label for="hm-root-select">Base:</label>
+      <select id="hm-root-select">
+        {% for opt in fig.bases %}
+          <option value="{{ opt.value }}"{% if opt.selected %} selected{% endif %}>{{ opt.label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="hm-mode-switch" role="group" aria-label="Playback mode">
+      <button type="button" class="audio-btn active" id="hm-mode-melodic" data-mode="melodic">Melodic (Sequential)</button>
+      <button type="button" class="audio-btn" id="hm-mode-harmonic" data-mode="harmonic">Harmonic (Simultaneous)</button>
+    </div>
+  </div>
+
+  <div class="hm-single-list" id="hm-list">
+    {% for item in fig.intervals %}
+      <div class="hm-chip is-consonant" data-hm-row>
+        <span><strong>{{ item.symbol }}</strong> {{ item.name }}</span>
+        <span class="hm-status-tag" data-hm-tag>Consonant</span>
+        <button type="button" class="audio-btn" data-hm-cents="{{ item.cents }}">▶ Play</button>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="hm-readout" class="figure-readout"></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

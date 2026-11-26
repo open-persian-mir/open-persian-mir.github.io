@@ -1,0 +1,152 @@
+{
+  "koronSoriLab": {
+    "id": "koron-sori-lab",
+    "basePitches": [
+      { "value": "293.66", "label": "D4 (Re ≈ 293.66 Hz)", "selected": true },
+      { "value": "261.63", "label": "C4 (Do ≈ 261.63 Hz)" },
+      { "value": "329.63", "label": "E4 (Mi ≈ 329.63 Hz)" },
+      { "value": "440.00", "label": "A4 (La = 440.00 Hz)" }
+    ],
+    "contexts": [
+      { "value": "theory", "label": "Vazīrī Theory / Notation (±50¢ Quarter Tone)", "selected": true },
+      { "value": "shur", "label": "Performance Practice: Slightly Lower Koron, ~-60¢" },
+      { "value": "segah", "label": "Performance Practice: Slightly Higher Koron, ~-40¢" }
+    ],
+    "caption": "Interactive Koron (U+1D1EA) & Sori (U+1D1E9) figure: compare Vazīrī's theoretical quarter-tone definition (±50¢) with subtle context-dependent shifts in traditional Radif performance."
+  },
+  "mojannabLab": {
+    "id": "mojannab-lab",
+    "roots": [
+      { "value": "293.66", "label": "D4 (Re ≈ 293.66 Hz)", "selected": true },
+      { "value": "261.63", "label": "C4 (Do ≈ 261.63 Hz)" },
+      { "value": "220.00", "label": "A3 (La = 220.00 Hz)" },
+      { "value": "349.23", "label": "F4 (Fa ≈ 349.23 Hz)" }
+    ],
+    "spans": [
+      { "value": "150", "label": "Standard Pedagogical (~150¢ Neutral 2nd)", "selected": true },
+      { "value": "140", "label": "Compact Neutral 2nd (~140¢)" },
+      { "value": "160", "label": "Wide Neutral 2nd (~160¢)" }
+    ],
+    "caption": "Interactive Mojannab (ج) figure: compare a neutral second against a minor second (Baqiyyeh) and major second (Ṭanīnī) melodically and harmonically."
+  },
+  "bishTaniniLab": {
+    "id": "bish-tanini-lab",
+    "roots": [
+      { "value": "277.18", "label": "D4 Koron (Re 𝄪/Koron ≈ 277.18 Hz)", "selected": true },
+      { "value": "261.63", "label": "C4 (Do ≈ 261.63 Hz)" },
+      { "value": "293.66", "label": "D4 (Re ≈ 293.66 Hz)" },
+      { "value": "329.63", "label": "E4 (Mi ≈ 329.63 Hz)" }
+    ],
+    "spans": [
+      { "value": "250", "label": "~250¢ (150¢ Mojannab + 100¢ Baqiyyeh)", "selected": true },
+      { "value": "240", "label": "~240¢ (140¢ Mojannab + 100¢ Baqiyyeh)" },
+      { "value": "260", "label": "~260¢ (160¢ Mojannab + 100¢ Baqiyyeh)" }
+    ],
+    "caption": "Interactive Bīsh-Ṭanīnī (هـ) figure: hear how a super-major second (ج + ب) sits between a major second (Ṭanīnī) and a minor third."
+  },
+  "harmonicMelodic": {
+    "id": "harmonic-melodic-figure",
+    "bases": [
+      { "value": "293.66", "label": "D4 (293.66 Hz)", "selected": true },
+      { "value": "261.63", "label": "C4 (261.63 Hz)" },
+      { "value": "220.00", "label": "A3 (220.00 Hz)" }
+    ],
+    "intervals": [
+      { "symbol": "ب", "name": "Baqiyyeh (~100¢)", "cents": 100 },
+      { "symbol": "ج", "name": "Mojannab (~150¢)", "cents": 150 },
+      { "symbol": "ط", "name": "Ṭanīnī (~200¢)", "cents": 200 },
+      { "symbol": "هـ", "name": "Bīsh-Ṭanīnī (~250¢)", "cents": 250 }
+    ],
+    "caption": "Toggle between Melodic and Harmonic mode to compare how the four seconds behave sequentially versus simultaneously."
+  },
+  "dangExamples": {
+    "id": "dang-examples-figure",
+    "validLabel": "Valid Dāng Examples (Sequential Playback)",
+    "valid": [
+      {
+        "formula": "ط + ط + ب",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "hz": 293.66 },
+          { "label": "E", "hz": 329.63 },
+          { "label": "F", "hz": 349.23 }
+        ]
+      },
+      {
+        "formula": "ج + ج + ط",
+        "notes": [
+          { "label": "D", "hz": 293.66 },
+          { "label": "E", "accidental": "koron", "hz": 320.24 },
+          { "label": "F", "hz": 349.23 },
+          { "label": "G", "hz": 392.00 }
+        ]
+      },
+      {
+        "formula": "ب + ط + ط",
+        "notes": [
+          { "label": "A", "hz": 220.00 },
+          { "label": "B♭", "hz": 233.08 },
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "hz": 293.66 }
+        ]
+      },
+      {
+        "formula": "ج + ط + ج",
+        "notes": [
+          { "label": "E", "accidental": "koron", "hz": 320.24 },
+          { "label": "F", "hz": 349.23 },
+          { "label": "G", "hz": 392.00 },
+          { "label": "A", "accidental": "koron", "hz": 427.47 }
+        ]
+      },
+      {
+        "formula": "ب + ط + ط",
+        "notes": [
+          { "label": "B", "hz": 246.94 },
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "hz": 293.66 },
+          { "label": "E", "hz": 329.63 }
+        ]
+      }
+    ],
+    "invalidLabel": "Invalid Dāng Counterexamples (Sequential Playback)",
+    "invalid": [
+      {
+        "formula": "Quarter-tone step",
+        "notes": [
+          { "label": "C", "hz": 261.63 },
+          { "label": "D", "accidental": "koron", "hz": 285.30 },
+          { "label": "D♮", "hz": 293.66 },
+          { "label": "F", "hz": 349.23 }
+        ]
+      },
+      {
+        "formula": "Quarter-tone step",
+        "notes": [
+          { "label": "F", "hz": 349.23 },
+          { "label": "A♭", "hz": 415.30 },
+          { "label": "A", "accidental": "koron", "hz": 427.47 },
+          { "label": "B♭", "hz": 466.16 }
+        ]
+      },
+      {
+        "formula": "Consecutive ب + ب",
+        "notes": [
+          { "label": "G", "hz": 196.00 },
+          { "label": "A♭", "hz": 207.65 },
+          { "label": "A♮", "hz": 220.00 },
+          { "label": "C", "hz": 261.63 }
+        ]
+      },
+      {
+        "formula": "Consecutive ب + ب",
+        "notes": [
+          { "label": "E", "hz": 164.81 },
+          { "label": "G", "hz": 196.00 },
+          { "label": "A♭", "hz": 207.65 },
+          { "label": "A♮", "hz": 220.00 }
+        ]
+      }
+    ]
+  }
+}

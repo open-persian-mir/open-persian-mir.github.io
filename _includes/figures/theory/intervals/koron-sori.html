@@ -1,0 +1,44 @@
+{% assign fig = site.data.figures.theory.intervals.koronSoriLab %}
+<figure class="interactive-figure" id="{{ fig.id }}">
+  <div class="figure-controls">
+    <label for="ks-base-select">Reference Pitch:</label>
+    <select id="ks-base-select">
+      {% for opt in fig.basePitches %}
+        <option value="{{ opt.value }}"{% if opt.selected %} selected{% endif %}>{{ opt.label }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="ks-context-select">Intonation Context:</label>
+    <select id="ks-context-select">
+      {% for opt in fig.contexts %}
+        <option value="{{ opt.value }}"{% if opt.selected %} selected{% endif %}>{{ opt.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="figure-controls">
+    <button type="button" class="audio-btn" id="ks-play-koron">{% include accidental.html type="koron" %} Koron</button>
+    <button type="button" class="audio-btn" id="ks-play-natural">▶ ♮ Natural (0¢)</button>
+    <button type="button" class="audio-btn" id="ks-play-sori">▶ {% include accidental.html type="sori" %} Sori</button>
+    <button type="button" class="audio-btn" id="ks-play-compare">▶ {% include accidental.html type="koron" %} → ♮ → {% include accidental.html type="sori" %}</button>
+    <button type="button" class="audio-btn" id="ks-play-chord">▶ Harmonic Cluster</button>
+  </div>
+
+  <div class="ks-pitch-strip" aria-hidden="true">
+    <div class="ks-marker" id="ks-marker-koron">
+      <span class="ks-tag">{% include accidental.html type="koron" %} Koron (U+1D1EA)</span>
+      <span class="ks-hz" id="ks-hz-koron">—</span>
+    </div>
+    <div class="ks-marker is-center" id="ks-marker-natural">
+      <span class="ks-tag">♮ Natural (0¢)</span>
+      <span class="ks-hz" id="ks-hz-natural">—</span>
+    </div>
+    <div class="ks-marker" id="ks-marker-sori">
+      <span class="ks-tag">{% include accidental.html type="sori" %} Sori (U+1D1E9)</span>
+      <span class="ks-hz" id="ks-hz-sori">—</span>
+    </div>
+  </div>
+
+  <div id="ks-readout" class="figure-readout"></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>

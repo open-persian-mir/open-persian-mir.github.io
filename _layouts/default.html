@@ -27,7 +27,9 @@
   <footer class="site-footer">
     {{ site.title }} — Open Computational Persian Music Hub
   </footer>
-  <script defer src="{{ '/assets/js/audio-engine.js' | relative_url }}"></script>
-  <script defer src="{{ '/assets/js/interval-figures.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  {% if page.page_css %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: page.page_css | append: '.css' | relative_url }}" />
+  {% endif %}
 </body>
 </html>

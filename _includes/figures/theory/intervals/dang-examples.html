@@ -1,0 +1,30 @@
+{% assign fig = site.data.figures.theory.intervals.dangExamples %}
+<figure class="interactive-figure dang-examples-figure" id="{{ fig.id }}">
+  <div class="dang-group-label">{{ fig.validLabel }}</div>
+  {% for row in fig.valid %}
+    {% assign freqs = row.notes | map: "hz" | join: "," %}
+    <div class="dang-example-row" data-freqs="{{ freqs }}">
+      <div class="dang-notes">
+        {% for n in row.notes %}
+          <span class="dang-note-pill" data-note-idx="{{ forloop.index0 }}">{{ n.label }}{% if n.accidental %} {% include accidental.html type=n.accidental %}{% endif %}</span>
+        {% endfor %}
+      </div>
+      <span class="dang-formula">{{ row.formula }}</span>
+      <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+    </div>
+  {% endfor %}
+
+  <div class="dang-group-label is-invalid">{{ fig.invalidLabel }}</div>
+  {% for row in fig.invalid %}
+    {% assign freqs = row.notes | map: "hz" | join: "," %}
+    <div class="dang-example-row is-invalid" data-freqs="{{ freqs }}">
+      <div class="dang-notes">
+        {% for n in row.notes %}
+          <span class="dang-note-pill" data-note-idx="{{ forloop.index0 }}">{{ n.label }}{% if n.accidental %} {% include accidental.html type=n.accidental %}{% endif %}</span>
+        {% endfor %}
+      </div>
+      <span class="dang-formula">{{ row.formula }}</span>
+      <button type="button" class="audio-btn" data-dang-play>▶ Play</button>
+    </div>
+  {% endfor %}
+</figure>

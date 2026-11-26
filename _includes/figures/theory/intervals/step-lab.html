@@ -1,0 +1,48 @@
+{% assign fig = site.data.figures.theory.intervals[include.key] %}
+{% assign p = include.prefix %}
+<figure class="interactive-figure" id="{{ fig.id }}">
+  <div class="figure-controls">
+    <label for="{{ p }}-root-select">{{ include.root_label }}</label>
+    <select id="{{ p }}-root-select">
+      {% for opt in fig.roots %}
+        <option value="{{ opt.value }}"{% if opt.selected %} selected{% endif %}>{{ opt.label }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="{{ p }}-cents-select">{{ include.span_label }}</label>
+    <select id="{{ p }}-cents-select">
+      {% for opt in fig.spans %}
+        <option value="{{ opt.value }}"{% if opt.selected %} selected{% endif %}>{{ opt.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="figure-controls">
+    {% if p == "moj" %}
+      <button type="button" class="audio-btn" id="moj-play-root">▶ Root Tone</button>
+      <button type="button" class="audio-btn" id="moj-play-target">▶ Target + {% include accidental.html type="koron" %} (ج)</button>
+      <button type="button" class="audio-btn" id="moj-play-melodic">▶ Melodic Step</button>
+      <button type="button" class="audio-btn" id="moj-play-harmonic">▶ Harmonic Interval</button>
+    {% else %}
+      <button type="button" class="audio-btn" id="bt-play-start">▶ Lower Tone</button>
+      <button type="button" class="audio-btn" id="bt-play-upper">▶ Upper Tone (هـ)</button>
+      <button type="button" class="audio-btn" id="bt-play-melodic">▶ Melodic Step</button>
+      <button type="button" class="audio-btn" id="bt-play-harmonic">▶ Harmonic Interval</button>
+    {% endif %}
+  </div>
+
+  <div class="ks-pitch-strip" aria-hidden="true">
+    {% if p == "moj" %}
+      <div class="ks-marker is-center" id="moj-marker-root"><span class="ks-tag">Root (0¢)</span><span class="ks-hz" id="moj-hz-root">—</span></div>
+      <div class="ks-marker" id="moj-marker-target"><span class="ks-tag">Mojannab ج</span><span class="ks-hz" id="moj-hz-target">—</span></div>
+      <div class="ks-marker" id="moj-marker-ref"><span class="ks-tag">Ref: Baqiyyeh (100¢) / Ṭanīnī (200¢)</span><span class="ks-hz" id="moj-hz-ref">—</span></div>
+    {% else %}
+      <div class="ks-marker is-center" id="bt-marker-start"><span class="ks-tag">Lower Tone (0¢)</span><span class="ks-hz" id="bt-hz-start">—</span></div>
+      <div class="ks-marker" id="bt-marker-upper"><span class="ks-tag">Bīsh-Ṭanīnī هـ</span><span class="ks-hz" id="bt-hz-upper">—</span></div>
+      <div class="ks-marker" id="bt-marker-ref"><span class="ks-tag">Ref: Ṭanīnī (200¢) / Minor 3rd (300¢)</span><span class="ks-hz" id="bt-hz-ref">—</span></div>
+    {% endif %}
+  </div>
+
+  <div id="{{ p }}-readout" class="figure-readout"></div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>
