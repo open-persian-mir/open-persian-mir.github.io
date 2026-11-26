@@ -1,0 +1,20 @@
+{% assign fig = site.data.figures.theory.fundamentals.scaleComparison %}
+<figure class="interactive-figure fc-scale-figure" id="{{ fig.id }}">
+  {% for sc in fig.scales %}
+    {% assign freqs = sc.notes | map: "hz" | join: "," %}
+    <div class="fc-scale-row is-{{ sc.status }}" data-freqs="{{ freqs }}" data-desc="{{ sc.description | escape }}">
+      <div class="fc-scale-header">
+        <span class="fc-scale-title"><strong>{{ sc.title }}</strong></span>
+        <span class="fc-scale-tag">{{ sc.tag }}</span>
+        <button type="button" class="audio-btn" data-fc-play>▶ Play</button>
+      </div>
+      <div class="fc-note-strip">
+        {% for n in sc.notes %}
+          <span class="fc-note-pill">{{ n.label }}{% if n.accidental %} {% include accidental.html type=n.accidental %}{% endif %}</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <div id="fc-scale-readout" class="figure-readout">Click any scale above to hear how pitch selection shapes melodic coherence.</div>
+  <figcaption>{{ fig.caption }}</figcaption>
+</figure>
